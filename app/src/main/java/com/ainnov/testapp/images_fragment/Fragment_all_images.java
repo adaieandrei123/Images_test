@@ -14,7 +14,7 @@ public class Fragment_all_images extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         // Defines the xml file for the fragment
-        return inflater.inflate(R.layout.fragment_best_images, parent, false);
+        return inflater.inflate(R.layout.fragment_all_images, parent, false);
     }
 
     // This event is triggered soon after onCreateView().
