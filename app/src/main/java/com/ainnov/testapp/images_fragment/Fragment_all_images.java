@@ -1,10 +1,12 @@
 package com.ainnov.testapp.images_fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ainnov.testapp.ImageActivity;
 import com.ainnov.testapp.R;
 import com.ainnov.testapp.adapters.AllImagesAdapter;
 import com.ainnov.testapp.model.Data;
@@ -73,10 +75,21 @@ public class Fragment_all_images extends BaseFragment {
 
                 adapter = new AllImagesAdapter(requireActivity(),mImageModels);
 
+                /**
+                 * to display the category you need an item type view to differentiate between header and images (I didn't have time)
+                 */
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(requireContext(),3,GridLayoutManager.VERTICAL,false);
                 mRecyclerView.setLayoutManager(gridLayoutManager);
                 mRecyclerView.setAdapter(adapter);
-                mRecyclerView.setClickable(true);
+
+                adapter.setOnItemClickListener(new AllImagesAdapter.ClickListener() {
+                    @Override
+                    public void onItemClick(int position, View v) {
+                        Intent intent = new Intent(getActivity(), ImageActivity.class);
+                        intent.putExtra("name",mImageModels.get(position).getName());
+                        startActivity(intent);
+                    }
+                });
             }
             });
     }

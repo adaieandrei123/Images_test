@@ -13,9 +13,10 @@
         android:id="@+id/image_v"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#B52727"
+        android:background="#f39c12"
         tools:srcCompat="@tools:sample/avatars">
         <TextView
+            android:textColor="@color/white"
             android:id="@+id/image_name"
             android:gravity="center"
             android:text="UN TEXT"

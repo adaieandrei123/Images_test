@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class AllImagesAdapter extends RecyclerView.Adapter<AllImagesAdapter.ViewHolder> {
 
+    private static ClickListener aClickListener;
     List<ImageModel> images;
     LayoutInflater inflater;
     Context mContext;
@@ -46,11 +47,14 @@ public class AllImagesAdapter extends RecyclerView.Adapter<AllImagesAdapter.View
         return images.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView name;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             name = itemView.findViewById(R.id.image_name);
 
             LinearLayout linearLayout = itemView.findViewById(R.id.image_v);
@@ -58,12 +62,19 @@ public class AllImagesAdapter extends RecyclerView.Adapter<AllImagesAdapter.View
             int height = mContext.getResources().getDisplayMetrics().heightPixels/3;
             linearLayout.setLayoutParams(new LinearLayoutCompat.LayoutParams(width,width));
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                   // Toast.makeText(v.getContext(), "Clicked -> " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
-                }
-            });
         }
+
+        @Override
+        public void onClick(View view) {
+            aClickListener.onItemClick(getAdapterPosition(),view);
+        }
+    }
+
+    public void setOnItemClickListener(ClickListener clickListener){
+        AllImagesAdapter.aClickListener = clickListener;
+    }
+
+    public interface ClickListener{
+        void onItemClick(int position,View v);
     }
 }

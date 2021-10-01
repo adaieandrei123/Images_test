@@ -7,4 +7,5 @@
     <string name="bestImageText">BEST IMAGES</string>
     <string name="myImagesText">MY IMAGES</string>
     <string name="all_images">ALL IMAGES</string>
+    <string name="second_app_name">Images App</string>
 </resources>

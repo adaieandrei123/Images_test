@@ -19,10 +19,11 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_home_24"/>
         <TextView
-
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Image App"
+            android:text="@string/second_app_name"
             android:textSize="15sp"
             android:layout_toEndOf="@+id/homeIcon"
             android:layout_centerVertical="true"/>
