@@ -7,6 +7,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ Activity for display the image when on click
+ */
+
 public class ImageActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView imgName;

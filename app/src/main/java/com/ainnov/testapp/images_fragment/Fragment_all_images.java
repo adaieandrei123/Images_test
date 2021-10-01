@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ainnov.testapp.R;
+import com.ainnov.testapp.adapters.AllImagesAdapter;
 import com.ainnov.testapp.model.Data;
 import com.ainnov.testapp.model.ImageModel;
 import com.ainnov.testapp.viewmodel.MainViewModel;
@@ -15,6 +16,12 @@ import java.util.List;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+/**
+ Fragment for display all the images with categories
+ */
 
 public class Fragment_all_images extends BaseFragment {
 
@@ -25,6 +32,9 @@ public class Fragment_all_images extends BaseFragment {
     private ArrayList<ImageModel> cat2Array;
     private ArrayList<ImageModel> cat3Array;
     private ArrayList<ImageModel> cat4Array;
+    private RecyclerView mRecyclerView;
+    private AllImagesAdapter adapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_all_images, parent, false);
@@ -32,10 +42,13 @@ public class Fragment_all_images extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
+        mRecyclerView = view.findViewById(R.id.myRecycler);
+
         cat1Array = new ArrayList<>();
         cat2Array = new ArrayList<>();
         cat3Array = new ArrayList<>();
         cat4Array = new ArrayList<>();
+
 
         mMainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
         mMainViewModel.getDataLiveData().observe(requireActivity(), new Observer<Data>() {
@@ -58,6 +71,12 @@ public class Fragment_all_images extends BaseFragment {
                         cat4Array.add(im);
                 }
 
+                adapter = new AllImagesAdapter(requireActivity(),mImageModels);
+
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(requireContext(),3,GridLayoutManager.VERTICAL,false);
+                mRecyclerView.setLayoutManager(gridLayoutManager);
+                mRecyclerView.setAdapter(adapter);
+                mRecyclerView.setClickable(true);
             }
             });
     }

@@ -22,6 +22,10 @@ import java.util.List;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+/**
+ Fragment for display my images
+ */
+
 public class Fragment_my_images extends BaseFragment {
     public static final String TAG = "Fragment_my_images";
     private MainViewModel mMainViewModel;

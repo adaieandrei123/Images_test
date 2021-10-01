@@ -13,9 +13,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ Data repository / get data
+ */
+
 public class Repository {
 
-    public static final String TAG = "IMAGEVIEWMODEL";
+    public static final String TAG = "Repository";
     public MutableLiveData<Data> mListMutableLiveData = new MutableLiveData<>();
     private static final Repository ourInstance = new Repository();
     private API api;

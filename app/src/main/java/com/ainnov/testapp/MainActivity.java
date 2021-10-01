@@ -18,6 +18,11 @@ import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
+
+/**
+ MainActivity / methods / slider
+ */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView homeBtn;
     private Button miBtn,bimBtn;
     private FragmentTransaction ft;
+    private RecyclerView mRecyclerView;
 
 
     @Override
@@ -68,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         miBtn.setOnClickListener(this);
         bimBtn.setOnClickListener(this);
         homeBtn.setOnClickListener(this);
+
 
         List<SlideModel> slideImages = new ArrayList<>();
         slideImages.add(new SlideModel("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg","Image 1"));

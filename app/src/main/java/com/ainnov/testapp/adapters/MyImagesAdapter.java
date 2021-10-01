@@ -17,11 +17,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.LinearLayoutCompat;
 
+/**
+ Adapter for My Images / Best Images - use glide for real images
+*/
 public class MyImagesAdapter extends ArrayAdapter<ImageModel> {
 
-    public MyImagesAdapter(Context context, ArrayList<ImageModel> imagesArrayListh){
+    public MyImagesAdapter(Context context, ArrayList<ImageModel> imagesArrayList){
 
-        super(context, R.layout.my_image_item,imagesArrayListh);
+        super(context, R.layout.my_image_item,imagesArrayList);
 
     }
 

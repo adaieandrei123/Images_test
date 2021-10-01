@@ -5,6 +5,9 @@ import com.ainnov.testapp.model.Data;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
+/**
+ This is the MainViewModel for the livedata
+ */
 public class MainViewModel extends ViewModel {
     private LiveData<Data> mDataLiveData;
 

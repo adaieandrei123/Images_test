@@ -4,6 +4,10 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+/**
+ Data model for every object / methods
+ */
+
 public class Data {
 
     @SerializedName("all_images")

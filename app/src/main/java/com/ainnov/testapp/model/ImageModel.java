@@ -3,6 +3,9 @@ package com.ainnov.testapp.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ Image model / methods
+ */
 public class ImageModel {
 
     @SerializedName("id")

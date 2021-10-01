@@ -2,7 +2,12 @@ package com.ainnov.testapp.images_fragment;
 
 import androidx.fragment.app.Fragment;
 
+/**
+ Base fragment - improvements can be done
+ */
+
 public class BaseFragment extends Fragment {
+
     public BaseFragment(){
 
     }

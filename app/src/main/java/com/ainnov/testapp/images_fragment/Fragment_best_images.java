@@ -22,6 +22,10 @@ import java.util.List;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+/**
+ Fragment for display best images
+ */
+
 public class Fragment_best_images extends BaseFragment {
     public static final String TAG = "Fragment_best_images";
     private MainViewModel mMainViewModel;
