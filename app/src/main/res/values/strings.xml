@@ -2,4 +2,8 @@
     <string name="app_name">TestApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btnMyImg">My Images</string>
+    <string name="btnBestImages">Best Images</string>
+    <string name="bestImageText">BEST IMAGES</string>
+    <string name="myImagesText">MY IMAGES</string>
 </resources>

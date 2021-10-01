@@ -38,7 +38,7 @@ public class Data {
         return category_4;
     }
     public int[] getMyImages(){
-        return best_images;
+        return my_images;
     }
 
     public int[] getBestImages(){

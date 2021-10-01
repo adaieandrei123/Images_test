@@ -10,8 +10,6 @@ import android.widget.RelativeLayout;
 import com.ainnov.testapp.images_fragment.Fragment_all_images;
 import com.ainnov.testapp.images_fragment.Fragment_best_images;
 import com.ainnov.testapp.images_fragment.Fragment_my_images;
-import com.ainnov.testapp.model.Data;
-import com.ainnov.testapp.viewmodel.ImageViewModel;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
 
@@ -20,8 +18,6 @@ import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView homeBtn;
     private Button miBtn,bimBtn;
     private FragmentTransaction ft;
-    private ImageViewModel mImageViewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,19 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setupViews();
         displayAllImages();
-
-        mImageViewModel = new ViewModelProvider(this).get(ImageViewModel.class);
-        mImageViewModel.getData().observe(this, new Observer<Data>() {
-            @Override
-            public void onChanged(Data data) {
-
-            }
-        });
-
     }
 
     public void displayAllImages(){
         ft = getSupportFragmentManager().beginTransaction();
+        Fragment_all_images fg = new Fragment_all_images();
         ft.replace(R.id.fragmentContainer, new Fragment_all_images());
         ft.commit();
     }
